@@ -1,0 +1,278 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #121212, #3a3a3a, #121212); /* Fondo difuminado */
+    background-size: 400% 400%; /* Tamaño del gradiente */
+    animation: gradientAnimation 15s ease infinite; /* Animación para el gradiente */
+    color: #e0e0e0; /* Texto claro */
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-panel h2 i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+#movie-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#movie-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #333; /* Fondo oscuro para cada item */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#movie-list li:hover {
+    background-color: #444; /* Fondo más claro al pasar el ratón */
+}
+
+#movie-list img {
+    width: 50px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+#movie-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Estilo para el contenedor del panel derecho */
+.right-panel {
+    padding: 20px;
+    background-color: #222; /* Fondo oscuro para el panel derecho */
+    border-left: 2px solid #333; /* Borde sutil */
+}
+
+/* Contenedor de detalles */
+.details-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra más suave */
+}
+
+/* Capa superpuesta con detalles */
+.details-container .details-content {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Texto inicial */
+.details-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+/* parte izquierda para imagen */
+/* Estilo para el panel izquierdo */
+.left-panel {
+    width: 30%; /* O el porcentaje que desees para la columna izquierda */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo claro para el panel */
+    overflow-y: auto; /* Permite el desplazamiento si hay muchas películas */
+}
+.left-panel {
+    background-color: #1e1e1e; /* Fondo oscuro para el panel izquierdo */
+    border-right: 2px solid #333; /* Borde sutil */
+}
+
+.right-panel {
+    background-color: #222; /* Fondo oscuro para el panel derecho */
+}
+
+/* Estilo para la lista de películas */
+#movie-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+h2{
+    text-align: center;
+}
+
+/* Estilo para cada elemento de la lista */
+#movie-list li {
+    position: relative;
+    margin-bottom: 15px;
+    height: 150px; /* Ajusta el alto según necesites */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre un item */
+#movie-list li:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilo para el nombre de la película sobre la imagen */
+#movie-list li span {
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Fondo para cada película (se aplica dinámicamente desde JS) */
+#movie-list li img {
+    display: none; /* Ocultamos la imagen original ya que usaremos la imagen como fondo */
+}
+
+.pagination button {
+    background-color: #444; /* Fondo oscuro para los botones */
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.pagination button:disabled {
+    background-color: #333; /* Más oscuro cuando está desactivado */
+    color: #888;
+    cursor: not-allowed;
+}
+
+.pagination button#first:disabled {
+    background-color: #444;
+}
+
+.pagination button#last:disabled {
+    background-color: #444;
+}
+
+button {
+    background-color: #444;
+    color: #fff;
+    border: 2px solid #555;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #333;
+    transform: translateY(2px);
+}
+
+.pagination button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #1e90ff;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluir Font Awesome para íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2><i class="fas fa-film"></i> Películas</h2>
+            <ul id="movie-list">
+                
+            </ul>
+        </div>
+
+        
+        <div class="right-panel">
+            <h2>Detalles de la Película</h2>
+            <div id="movie-details" class="details-container">
+                <h3>. . .</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles de paginación -->
+    <div class="pagination">
+        <button id="first">Primera Página</button>
+        <button id="ant">Anterior</button>
+        <span id="current-page">Página: 1</span>
+        <button id="sig">Siguiente</button>
+        <button id="last">Última Página</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
